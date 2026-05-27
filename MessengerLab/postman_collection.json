@@ -1,0 +1,108 @@
+{
+  "info": {
+    "name": "Messenger API Lab .NET",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Create User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"Name\": \"Alice\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5278/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5278",
+          "path": [
+            "users"
+          ]
+        }
+      }
+    },
+    {
+      "name": "2. Create Conversation",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"Type\": \"group\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5278/conversations",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5278",
+          "path": [
+            "conversations"
+          ]
+        }
+      }
+    },
+    {
+      "name": "3. Send Message",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"ConversationId\": \"ВСТАВ_ID_БЕСІДИ_ТУТ\",\n  \"SenderId\": \"ВСТАВ_ID_КОРИСТУВАЧА_ТУТ\",\n  \"Text\": \"Hello from Postman!\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5278/messages",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5278",
+          "path": [
+            "messages"
+          ]
+        }
+      }
+    },
+    {
+      "name": "4. Get Messages",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5278/conversations/ВСТАВ_ID_БЕСІДИ_ТУТ/messages",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5278",
+          "path": [
+            "conversations",
+            "ВСТАВ_ID_БЕСІДИ_ТУТ",
+            "messages"
+          ]
+        }
+      }
+    }
+  ]
+}
